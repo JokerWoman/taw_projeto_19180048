@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Fashion Blog</title>
+  <link rel="stylesheet" href="css/projecto.css">
+  <script src="js/projecto.js"></script>
+</head>
+
+<body class="aboutme_body">
+
+  <!-- Adiciono a classe darked e faço uma lista para cada link do nav -->
+  <nav class="darked">
+    <a href="mainpage.html" class="mainpage">Main Page</a>
+    <ul>
+      <li><a href="makeup.html">Make Up</a></li>
+      <li><a href="outfits.html">Outfits</a></li>
+      <li><a href="accessorios.html">Accesorios</a></li>
+      <li><a href="aboutme.html">About Me</a></li>
+    </ul>
+  </nav>
+
+  <!-- Adiciono a classe socialbar e mostro uma imagem miniatura para cada link das redes sociais -->
+  <aside class="socialbar">
+    <a href="https://www.facebook.com/jokerscarecrow" target="_blank" class="facebook"><img src="assets/facebook_logo.png"></a>
+    <a href="https://www.instagram.com/majestyjoker_/" target="_blank" class="instagram"><img src="assets/instagram_logo.jpg"></a>
+    <a href="https://twitter.com/JokerScarecrow" target="_blank" class="twitter"><img src="assets/twitter.jpg"></a>
+    <a href="http://jokerscarecrow.tumblr.com/" target="_blank" class="tumblr"><img src="assets/tumblr_logo.png"></a>
+  </aside>
+
+  <section class="container">
+
+    <article class="aboutme">
+      <header>
+        <h1>Andrea Fernandes</h1>
+      </header>
+
+      <div class="aboutme_content">
+        <div class="aboutme_left">
+          <!-- Adiciono o conteudo do aboutme_left e faço uma descrição de mim -->
+          <img src="assets/aboutme_1.jpg">
+          <p>Hola, mi nombre es Andrea vengo de Caracas, Venezuela tengo 20 anos de edad , ahora
+            me encuentro encuentro viviendo en Porto, Portugal , estudiando la licenciatura de sistemas para la web en
+            en ESMAD en Medias Artes en Vila do Conde , y en las noches me encuentro realizando un curso profesional en
+            Oporto en la escuela de CINEL sobre Multimedia , cumplo anos el 18 de febrero , mi sueno es aprender a
+            maquillar
+            y aprender mucho mas sobre la moda y como vestir bien , me gustar ocupar mi tiempo para el estudio como
+            tambien
+            en hacer mis hobbits como jugar videojuegos , salir con amigos o mmi novio y salir a las compras.
+          </p>
+        </div>
+
+        <div class="aboutme_right">
+          <!-- Adiciono um form como conteudo do aboutme_right. No onsubmit chama uma função de javascript -->
+          <form onsubmit="return validateFormOnSubmit()" method="post" id="formulario">
+            <fieldset>
+              <legend>Dudas</legend>
+
+              <div>
+                <label for="name">Nombre</label>
+                <input class="aboutme_input" type="text" name="name" id="name" pattern="[A-Za-z]+" required>
+              </div>
+
+              <div>
+                <label for="name">Apellido</label>
+                <input class="aboutme_input" type="text" name="apellido" id="apellido" pattern="[A-Za-z]+" required>
+              </div>
+
+              <div>
+                <label for="name">Pais</label>
+                <input class="aboutme_input" type="text" name="pais" id="pais" pattern="[A-Za-z]+" required>
+              </div>
+
+              <div>
+                <label for="email">Email</label>
+                <input class="aboutme_input" type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+                  required>
+              </div>
+
+              <div>
+                <label for="email">Duda</label>
+                <textarea rows="4" cols="50"></textarea>
+              </div>
+
+              <input type="submit" value="Enviar">
+            </fieldset>
+          </form>
+        </div>
+
+      </div>
+    </article>
+
+  </section>
+
+</body>
+
+</html>

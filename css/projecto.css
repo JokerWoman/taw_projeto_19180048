@@ -1,0 +1,1435 @@
+* {
+  /* 
+    Faço com que a fonte seja
+    smoothed com anti alising.
+   */
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* 
+  Importo a fonte Poppings
+  dos servidores da Google.
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+body {
+  /*
+    Removo as margens e paddings 
+    para que o site tenha o mesmo aspecto
+    em diferentes browsers. Faço set da cor
+    dos textos também.
+  */
+  margin: 0;
+  padding: 0;
+  color: rgb(0, 0, 0);
+}
+
+
+/* ################################################# */
+
+
+/* ▼ About me and Main Page Background ▼ */
+
+.aboutme_body,
+.mainpage_body
+{
+  /*
+    Coloco o backgroun-color a uma cor
+    default para a pagina do about me
+    e do main page. 
+  */
+  background-color: #f1f1f1;
+}
+
+/* ▲ About me and Main Page Background  ▲ */
+
+
+/* ################################################# */
+
+
+/* ▼ Box com imagem ▼ */
+
+.headline_makeup {
+  /*
+    Coloco uma imagem de background com
+    400px de altura e preencho o width
+    total do ecrã. Alinho todo o texto
+    que existir no centro. 
+  */
+  position: relative;
+  height: 400px;
+  color: #fff;
+  text-align: center;
+  background: url('../assets/background_makeup.jpg') no-repeat scroll left center;
+  background-size: cover;
+}
+
+.headline_outfits {
+  /*
+    Coloco uma imagem de background com
+    400px de altura e preencho o width
+    total do ecrã. Alinho todo o texto
+    que existir no centro. 
+  */
+  position: relative;
+  height: 400px;
+  color: #fff;
+  text-align: center;
+  background: url('../assets/background_outfits.jpg') no-repeat scroll left center;
+  background-size: cover;
+}
+
+.headline_accessorios {
+  /*
+    Coloco uma imagem de background com
+    400px de altura e preencho o width
+    total do ecrã. Alinho todo o texto
+    que existir no centro. 
+  */
+  position: relative;
+  height: 400px;
+  color: #fff;
+  text-align: center;
+  background: url('../assets/background_accessorios.jpg') no-repeat scroll left center;
+  background-size: cover;
+}
+
+.headline_makeup:after, .headline_outfits:after, .headline_accessorios:after {
+  /*
+    Coloco um background de tom cinzento
+    atrás das imagens presentes nas classes
+    headline_makeup, headline_outfits e
+    headline_accessorios que cobre o tamanho
+    total da imagem. Este background tem alpha
+    a 0.5 para ter transparência e se poder
+    ver a imagem anterior mais escura.
+    Posição absoluta e top a 0 e left 0
+    fazem com que este background fique no inicio
+    da caixa anterior.
+  */
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.5);
+}
+
+.inner {
+  /*
+    Faço com que esta caixa fique centrada
+    em relação ao seu container. Transformo
+    o texto em maiusculas, e configuro o 
+    render order com o z-index. Adicono uma
+    animação para mudar a opacidade deste elemento.
+  */
+  position: absolute;
+  text-transform: uppercase;
+  width: 100%;
+  top: 50%;
+  z-index: 10;
+  /* Animação */
+  animation-name: fade_in_opacity;
+  /* nome do keyframe da animação */
+  animation-duration: 1.5s;
+  /* tempo da animação */
+  animation-fill-mode: forwards;
+  /* mantem as propriedades no final da animação*/
+}
+
+.inner h1 {
+  /*
+    Configuro a margem,
+    o tamanho do texto e 
+    coloco a negrito. 
+  */
+  margin: 0;
+  font-size: 42px;
+  line-height: 40x;
+  font-weight: bold;
+}
+
+.inner p {
+  /*
+    Configuros a margem,
+    o tamanho do texto e
+    coloco a italico. 
+  */
+  margin: 0;
+  font-size: 18px;
+  font-style: italic;
+}
+
+/* ▲ Box com imagem ▲ */
+
+/* ################################################# */
+
+/* ▼ Menu de Navegação ▼ */
+
+nav {
+  /*
+    Afixo a nav, coloco o
+    width total e configuro o 
+    render order com o z-index.
+  */
+  position: fixed;
+  width: 100%;
+  z-index: 11;
+}
+
+nav ul {
+  /*
+    Movo o elemento para a direita,
+    removo o list-style, configuro
+    o padding e a margem.
+  */
+  float: right;
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+}
+
+nav a.mainpage {
+  /*
+    Movo o elemento para a esquerda,
+    e adiciono uma margem top. É o link
+    da main page no nav.
+  */
+  float: left;
+  margin-top: 10px;
+}
+
+nav li {
+  /*
+    Movo cada elemento li para a esquerda.
+  */
+  float: left;
+}
+
+nav li a, nav a.mainpage {
+  /*
+    Configuro os links do li
+    e do link da main page.
+    Adiciono uma transition
+    para o background para um efeito
+    visual.
+  */
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 300;
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  transition: .3s background-color;
+  padding: 8px 25px;
+}
+
+nav a:hover, nav a.mainpage:hover {
+  /*
+    Configuro os links do li
+    e do link quando estão hover
+    para mudar o seu background.
+  */
+  background-color: #005f5f;
+}
+
+nav.scrolled, nav.darked {
+  /*
+    Escurece  o nav background e aplica
+    um animação de opacidade.
+  */
+  background-color: rgb(42, 42, 46);
+  /* Animação */
+  animation-name: fade_in_opacity;
+  /* nome do keyframe da animação */
+  animation-duration: 0.2s;
+  /* tempo da animação */
+  animation-fill-mode: forwards;
+  /* mantem as propriedades no final da animação*/
+}
+
+/* ▲ Menu de Navegação ▲ */
+
+/* ################################################# */
+
+/* ▼ Container para os article post ▼ */
+
+.container {
+  /*
+    Este container é usado pelos 
+    post_accesorios, post_makeup
+    e post_outfits. Uso apenas 60% e
+    centro o conteudo com o margin.
+    Aplico o default font-size de 18px
+    e também aplico um espaçamentop
+    de 100px.
+  */
+  padding-top: 100px;
+  width: 60%;
+  /* Usa 60% do ecrã */
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+/* ▲ Container para os article post ▲ */
+
+/* ################################################# */
+
+/* ▼ Data para os posts ▼ */
+
+article.post_accesorios header .date, article.post_makeup header .date, article.post_outfits header .date {
+  /*
+    Configuro a caixa da data para
+    os posts, o seu tamaho minimo,
+    texto maiusculo e configuro o
+    posicionamento deste elemento
+    absoluto relativamente ao seu pai. 
+  */
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 60px;
+  min-width: 60px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: black;
+  border-top: 2px solid black;
+}
+
+article.post_accesorios header .date span, article.post_makeup header .date span, article.post_outfits header .date span {
+  /*
+    Configuro a caixa da data para
+    ser display block e a linha do texto
+    para ter espaçamento.
+  */
+  display: block;
+  line-height: 25px;
+}
+
+article.post_accesorios header .date .day, article.post_makeup header .date .day, article.post_outfits header .date .day {
+  /*
+    Configuro o texto do dia para 
+    ter font-size dedicado e cor preta.
+  */
+  font-size: 22px;
+  color: black;
+}
+
+article.post_accesorios header .date .month, article.post_makeup header .date .month, article.post_outfits header .date .month {
+  /*
+    Configuro o texto do dia para 
+    ter font-size dedicado e cor preta.
+  */
+  font-size: 16px;
+  color: black;
+}
+
+/* ▲ Data para os posts ▲ */
+
+/* ################################################# */
+
+/* ▼ Posts accesorios configuração ▼ */
+
+article.post_accesorios {
+  /*
+    Aplico uma margem neste elemento,
+    um backgroun-color, alinho o texto
+    á esquerda e configuro o seu tamanho
+    e dou altura ao elemento de 500px.
+  */
+  position: relative;
+  margin: 10px 10px 90px 10px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  width: 100%;
+  height: 500px;
+}
+
+article.post_accesorios img.post_image {
+  /*
+    Configuro o posicionamento da
+    imagem absoluta relativamente ao 
+    seu pai. Configuro a imagem com
+    uma altura e width e aplico um
+    box-shadow para um efeito na imagem.
+  */
+  position: absolute;
+  height: 400px;
+  width: 92%;
+  top: 0;
+  left: 8%;
+  object-fit: cover;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 1);
+}
+
+article.post_accesorios .post_accesorios_content {
+  /*
+    Configuro o posicionamento deste
+    elemento absoluto relativamente ao 
+    seu pai. Configuro o seu width.
+  */
+  position: absolute;
+  width: 92%;
+  left: 8%;
+  top: 410px;
+}
+
+article.post_accesorios h1 {
+  /*
+    Configuro as propriedades do
+    texto do h1.
+  */
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+article.post_accesorios p {
+  /*
+    Configuro as propriedades
+    do texto do p.
+  */
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 22px;
+  text-align: justify;
+}
+
+/* ▲ Posts accesorios configuração ▲ */
+
+/* ################################################# */
+
+/* ▼ Posts Makeup configuração ▼ */
+
+article.post_makeup {
+  /*
+    Aplico uma margem neste elemento,
+    um backgroun-color, alinho o texto
+    á esquerda e configura o seu tamanho
+    e dá altura deste elemento de 300px.
+  */
+  position: relative;
+  margin: 10px 10px 90px 10px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  height: 300px;
+}
+
+article.post_makeup img.post_image {
+  /*
+    Configuro a imagem com uma altura
+    e width, fazemos o border-radius 50%
+    para a imagem ficar circular e agrupamos
+    a imagem no texto numa shape circular
+    e aplico uma box-shadow para um efeito
+     na imagem.
+  */
+  border-radius: 50%;
+  height: 180px;
+  width: 180px;
+  margin: 0 25px 5px 0;
+  float: left;
+  shape-outside: circle();
+  object-fit: cover;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+}
+
+article.post_makeup .post_makeup_content {
+  /*
+    Configuro padding em 
+    todas as direções.
+  */
+  padding: 25px 0 0 40px;
+}
+
+article.post_makeup h1 {
+  /*
+    Configuro as propriedades do
+    texto do h1.
+  */
+  margin: 0;
+  padding-left: 70px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+article.post_makeup h5 {
+  /*
+    Configuro as propriedades do
+    texto do h5.
+  */
+  margin: 0;
+  padding: 5px 0 0 70px;
+  font-size: 15px;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+article.post_makeup p {
+  /*
+    Configuro as propriedades
+    do texto do p.
+  */
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 22px;
+  text-align: justify;
+}
+
+/* ▲ Posts Makeup configuração ▲ */
+
+/* ################################################# */
+
+/* ▼ Posts Outfits configuração ▼ */
+
+article.post_outfits {
+  /*
+    Aplico uma margem neste elemento,
+    um backgroun-color, alinho o texto
+    á esquerda e configuro o seu tamanho
+    e dou altura ao elemento de 350px.
+  */
+  position: relative;
+  margin: 10px 10px 90px 10px;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  height: 350px;
+}
+
+article.post_outfits img.post_image {
+  /*
+    Configuro a imagem com
+    uma altura e width e aplico um
+    box-shadow para um efeito na imagem.
+  */
+  height: 300px;
+  width: 300px;
+  margin: 0 25px 5px 0;
+  float: left;
+  object-fit: cover;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 1);
+}
+
+article.post_outfits .post_outfits_content {
+  /*
+    Configuro o padding
+    em todas as direções.
+  */
+  padding: 15px 25px 25px 70px;
+}
+
+article.post_outfits h1 {
+  /*
+    Configuro as propriedades do
+    texto do h1.
+  */
+  margin: 0;
+  padding-left: 70px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+article.post_outfits h5 {
+  /*
+    Configuro as propriedades do
+    texto do h5.
+  */
+  margin: 0;
+  padding: 5px 0 0 70px;
+  font-size: 15px;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+article.post_outfits p {
+  /*
+    Configuro as propriedades
+    do texto do p.
+  */
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  margin-bottom: 20px;
+  line-height: 22px;
+  text-align: justify;
+}
+
+/* ▲ Posts Outfits configuração ▲ */
+
+/* ################################################# */
+
+/* ▼ Redes Sociais  ▼ */
+
+aside.socialbar {
+  /*
+    Configuro a barra social com
+    posicionamento fixed, margin e padding e
+    configuro o render order com o z-index.
+    A margin-left -40px é para esconder a maioria
+    da barra social.
+  */
+  position: fixed;
+  width: 50px;
+  z-index: 10;
+  top: 40%;
+  left: 0;
+  padding: 0;
+  margin: 0 0 0 -40px;
+  font-size: 18px;
+}
+
+aside.socialbar:hover {
+  /*
+    Configuro a barra social para
+    mudar a margin-left com uma animação
+    para que esta apareça totalmente.
+  */
+  /* Animação */
+  animation-name: push_margin_social;
+  /* nome do keyframe da animação */
+  animation-duration: 0.5s;
+  /* tempo da animação */
+  animation-fill-mode: forwards;
+  /* mantem as propriedades no final da animação*/
+}
+
+aside.socialbar a {
+  /*
+    Configuro os links 
+    da socialbar.
+  */
+  display: block;
+  text-align: center;
+  padding: 16px;
+  color: white;
+  font-size: 20px;
+}
+
+aside.socialbar a img {
+  /*
+    Configuro os icones de cada rede
+    social: o seu tamanho e coloco
+    o icon com forma de circulo.
+  */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+aside.socialbar a:hover {
+  /*
+    O social icon que estiver
+    selecionado fica com width
+    maior.
+  */
+  width: 30px;
+}
+
+.facebook {
+  /*
+    Configuro o background-color.
+  */
+  background: #3B5998;
+}
+
+.twitter {
+  /*
+    Configuro o background-color.
+  */
+  background: #55ACEE;
+}
+
+.instagram {
+  /*
+    Configuro o background-color.
+  */
+  background: #c0263f;
+}
+
+.tumblr {
+  /*
+    Configuro o background-color.
+  */
+  background: #000000;
+}
+
+/* ▲ Redes Sociais  ▲ */
+
+/* ################################################# */
+
+/* ▼ Main Page Principal ▼ */
+
+section.main_page_principal {
+  /*
+    Configuro o container para
+    a main page que contem a imagem
+    de background do tamanho do ecrã.
+  */
+  position: relative;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  background: url('../assets/background_main_page_2.jpg') no-repeat scroll left center;
+  background-size: cover;
+}
+
+section.main_page_principal::after {
+  /*
+    Coloco um background de tom cinzento
+    atrás da imagem presente na class
+    main_page_principal que cobre o tamanho
+    total da imagem. Este background tem alpha
+    a 0.2 para ter transparência e se poder
+    ver a imagem anterior mais escura.
+    Position absolute e top a 0 e left 0
+    fazem com que este background fique no inicio
+    da caixa anterior.
+  */
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.2);
+}
+
+.main_page_principal h1.logo_name {
+  /*
+    Configuro o container para ter width
+    maximo menos 15 pixels e dou um padding
+    left de 16px para o link ficar onde quero.
+    Configuro o background, o
+    texto e coloco um box shadow para
+    um efeito visual e configuro o
+    render order com o z-index.
+  */
+  position: absolute;
+  font-weight: 300;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 20px 0 20px 15px;
+  z-index: 10;
+  text-align: left;
+  color: white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  border-radius: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  width: calc(100% - 15px);
+}
+
+.main_page_principal h1.logo_name a:hover, .main_page_principal h1.logo_name a:visited, .main_page_principal h1.logo_name a:link, .main_page_principal h1.logo_name a:active {
+  /*
+    Removo todas as configurações deste
+    link e coloco a cor do texto como
+    inherit para ser a mesma.
+  */
+  text-decoration: none;
+  color: inherit;
+}
+
+.main_page_principal article {
+  /*
+    Container centrado que vai conter o
+    texto e o video e configuro o
+    render order com o z-index.
+  */
+  padding-top: 100px;
+  display: inline-block;
+  align-items: center;
+  left: 50%;
+  z-index: 10;
+  margin: 0 auto;
+  width: 750px;
+}
+
+.main_page_principal article header {
+  /*
+    Configuro as propriedades
+    do container que contém o h1 e h5.
+  */
+  position: relative;
+  display: inline-block;
+  color: black;
+  padding: 5px;
+  text-align: center;
+}
+
+.main_page_principal article header h1 {
+  /*
+    Configuro as propriedades do
+    texto do h1.
+  */
+  font-weight: bold;
+  font-size: 40px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px black;
+}
+
+.main_page_principal article header h5 {
+  /*
+    Configuro as propriedades do
+    texto do h5.
+  */
+  font-size: 22px;
+  font-style: italic;
+  font-weight: 100;
+  padding-top: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.main_page_principal article footer {
+  /*
+    Container que contém o video. 
+    Configuro as propriedades
+    do container.
+  */
+  position: relative;
+  padding: 5px;
+  width: 750px;
+  z-index: 10;
+}
+
+.main_page_principal article footer video {
+  /*
+    Configuro uma border a volta
+    do video e o seu tamanho. Aplico
+    uma animação de opacidade.
+  */
+  border: 1px solid rgba(255, 255, 255, 0.678);
+  margin-top: 50px;
+  width: 100%;
+  /* Animação */
+  animation-name: fade_in_opacity;
+  /* nome do keyframe da animação */
+  animation-duration: 2s;
+  /* tempo da animação */
+  animation-fill-mode: forwards;
+  /* mantem as propriedades no final da animação*/
+}
+
+/* ▲ Main Page Principal ▲ */
+
+/* ################################################# */
+
+/* ▼ Section for cards ▼ */
+
+.container_mainpage {
+  /*
+    Configuro o container para
+    os cartões da mainpage.
+  */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 60%;
+  left: 20%;
+}
+
+.container_mainpage .information {
+  /*
+    Configuro o container do
+    h1 e h5 para ter o texto centrado
+    e adiciono um padding-top.
+  */
+  text-align: center;
+  padding-top: 70px;
+}
+
+.container_mainpage .information h1 {
+  /*
+    Configuro as propriedades do
+    texto do h1.
+  */
+  font-weight: lighter;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.container_mainpage .information h5 {
+  /*
+    Configuro as propriedades do
+    texto do h5.
+  */
+  font-weight: lighter;
+  font-size: 12px;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.flex_container {
+  /*
+    Configuro um flex container
+    que alinha os items no centro.
+    Adiciono um padding-top.
+  */
+  padding-top: 60px;
+  display: flex;
+  justify-content: center;
+}
+
+/* ▲ Section for cards ▲ */
+
+/* ################################################# */
+
+/* ▼ Cartões da main page ▼ */
+
+article.card {
+  /*
+    Configuro o posicionamento deste
+    elemento, o tamanho de cada cartão,
+    o aspecto do cursor e um 
+    absoluto relativamente ao seu pai e 
+    coloco um box shadow para um efeito visual.
+  */
+  position: relative;
+  width: 250px;
+  height: 380px;
+  margin: 20px 20px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 1);
+  cursor: pointer;
+}
+
+article.card a:visited, article.card a:link, article.card a:hover, article.card a:active {
+  /*
+    Removo todas as configurações deste
+    link e coloco a cor do texto como
+    inherit para ser a mesma.
+  */
+  text-decoration: none;
+  color: inherit;
+}
+
+.card header {
+  /*
+    Configuro o posicionamento deste
+    elemento absoluto relativamente ao
+    seu pai e centra o texto.
+  */
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  top: 0%;
+}
+
+article.card header img {
+  /*
+    Configuro o tamanho da imagem
+    e o seu posicionamento.
+  */
+  position: relative;
+  width: 250px;
+  height: 250px;
+}
+
+article.card:hover header img {
+  /*
+    Aplico uma animação quando o cartão é
+    hovered que obscurece a imagem.
+  */
+  /* Animação */
+  animation-name: oscurecer_imagem;
+  /* nome do keyframe da animação */
+  animation-duration: 0.3s;
+  /* tempo da animação */
+  animation-fill-mode: forwards;
+  /* mantem as propriedades no final da animação*/
+}
+
+article.card header span {
+  /*
+    Configuro o posicionamento deste
+    elemento absoluto relativamente ao
+    seu pai e centramos o span no
+    meio da imagem.
+  */
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 105px;
+  /* imagem(250px)/2 - padding-top(10px) - padding-bottom (10px)*/
+  padding: 10px 0px;
+  opacity: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+  color: rgba(42, 42, 46, 1);
+  text-transform: uppercase;
+  background-color: rgba(255, 255, 255, 0.651);
+}
+
+article.card:hover header span {
+  /*
+    Aplico uma animação de opacidade
+    ao elemento de texto que está
+    centrado na imagem.
+  */
+  /* Animação */
+  animation-name: fade_in_opacity;
+  /* nome do keyframe da animação */
+  animation-duration: 1s;
+  /* tempo da animação */
+  animation-fill-mode: forwards;
+  /* mantem as propriedades no final da animação*/
+}
+
+article.card footer {
+  /*
+    Configuro o elemento
+    para ter um tamanho fixo e altero
+    o texto do footer que fica abaixo
+    da imagem.
+  */
+  position: relative;
+  width: 250px;
+  height: 130px;
+  /* 380 - 250 */
+  color: #000000;
+  padding: 0;
+  margin: 0;
+}
+
+article.card footer h1 {
+  /*
+    Configuro as propriedades do
+    texto do h1 e o posicionamento deste
+    elemento absoluto relativamente ao
+    seu pai e centra o texto.
+  */
+  position: absolute;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+  top: 250px;
+  text-align: left;
+  margin: 10px;
+}
+
+article.card footer span {
+  /*
+    Configuro as propriedades do
+    texto do texto dento do span e o
+    posicionamento deste elemento
+    absoluto relativamente ao
+    seu pai e centra o texto.
+  */
+  position: absolute;
+  font-size: 12px;
+  font-weight: bold;
+  top: 0;
+  top: 300px;
+  text-align: justify;
+  margin: 10px;
+  color: #1d1c1c;
+}
+
+/* ▲ Cartões da main page ▲ */
+
+/* ################################################# */
+
+/* ▼ Footer da main page ▼ */
+
+footer.footer_mainpage {
+  /*
+    Configuro o container como box-sizing 
+    para que o padding e border sejam incluidos
+    nas propriedades do width e height. Alinho
+    o texto á esquerda tambem e configuro o 
+    tamanho do container.
+  */
+  background: #292c2f;
+  box-sizing: border-box;
+  width: 100%;
+  text-align: left;
+  padding: 40px 50px;
+  margin-top: 60px;
+}
+
+footer.footer_mainpage .footer_left, footer.footer_mainpage .footer_center, footer.footer_mainpage .footer_right {
+  /*
+    Configuro os três containers
+    para terem display inline-block
+    e vertical align de top.
+  */
+  display: inline-block;
+  vertical-align: top;
+}
+
+footer.footer_mainpage .footer_left {
+  /*
+    Configuro o tamanho do
+    container dentro do footer á
+    esquerda.
+  */
+  width: 40%;
+}
+
+footer.footer_mainpage .footer-links {
+  /*
+    Configuro os links que se encontram
+    no footer_left.
+  */
+  color: #ffffff;
+  margin: 0px 0 12px;
+  padding: 0;
+}
+
+footer.footer_mainpage .footer-links a {
+  /*
+    Configuro os links que se encontram
+    no footer_left.
+  */
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+footer.footer_mainpage .footer-links a::after {
+  /*
+    Configuro um ponto em negrito
+    aseguir a cada link do footer_left.
+  */
+  content: ' .';
+  font-weight: bold;
+}
+
+footer.footer_mainpage .footer_name {
+  /*
+    Configuro o footer_name para conter
+    o meu nome e o copyright.
+  */
+  color: #8f9296;
+  font-size: 14px;
+  margin: 0;
+}
+
+footer.footer_mainpage .footer_center {
+  /*
+    Configuro o tamanho do
+    container dentro do footer ao
+    centro.
+  */
+  width: 35%;
+}
+
+footer.footer_mainpage .footer_center p {
+  /*
+    Configuro os elementos p que se encontram
+    no footer_center.
+  */
+  display: block;
+  color: #ffffff;
+  margin: 0;
+  padding-bottom: 5px;
+}
+
+/* Footer direita */
+
+footer.footer_mainpage .footer_right {
+  /*
+    Configuro o tamanho do
+    container dentro do footer á
+    direita.
+  */
+  width: 20%;
+}
+
+footer.footer_mainpage .footer_blog {
+  /*
+    Configuro o container que se encontra
+    no footer_right.
+  */
+  line-height: 20px;
+  color: #92999f;
+  font-size: 13px;
+  font-weight: normal;
+  margin: 0;
+}
+
+footer.footer_mainpage .footer_blog span {
+  /*
+    Configuro o texto do elemento span
+    que se encontra no footer_right.
+  */
+  display: block;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* ▲ Footer da main page ▲ */
+
+/* ################################################# */
+
+/* ▼ Form about me ▼ */
+
+article.aboutme {
+  /*
+    Configuro um container para o about me,
+    configuro o tamanho e aplico um
+    box-shadow para um efeito visual.
+  */
+  position: relative;
+  background-color: #ffffff;
+  color: #000000;
+  text-align: left;
+  font-size: 16px;
+  width: 100%;
+  height: 580px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 1);
+}
+
+article.aboutme header h1 {
+  /*
+    Configuro as propriedades do
+    texto do h1.
+  */
+  margin: 0;
+  padding: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  color: #333333;
+  text-transform: uppercase;
+}
+
+article.aboutme .aboutme_content .aboutme_left {
+  /*
+    Configuro o posicionamento deste elemento
+    absoluto relativamente ao seu pai.
+    Defino um width com metade do pai e 
+    posiciono a esquerda em relação ao pai.
+  */
+  position: absolute;
+  width: 50%;
+  margin: 0;
+  padding: 0;
+  top: 50px;
+  left: 0;
+  border-right: 1px dashed rgba(17, 16, 16, 0.651);
+}
+
+article.aboutme .aboutme_content .aboutme_left img {
+  /*
+    Configuro a imagem para ter uma box-shadow
+    para um efeito visual, posiciono a imagem
+    no elemento e coloco a imagem em forma circular.
+  */
+  position: relative;
+  border-radius: 50%;
+  height: auto;
+  width: 40%;
+  object-fit: cover;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  background: rgba(255, 255, 255, 1);
+  left: 30%;
+}
+
+article.aboutme .aboutme_content .aboutme_left p {
+  /*
+    Configuro o texto justificado, o seu posicionamento
+    e o seu width.
+  */
+  position: relative;
+  text-align: justify;
+  width: 80%;
+  left: 10%;
+}
+
+article.aboutme .aboutme_content .aboutme_right {
+  /*
+    Configuro o posicionamento deste elemento
+    absoluto relativamente ao seu pai.
+    Defino um width com metade do pai e 
+    posiciono a esquerda em relação ao pai.
+  */
+  position: absolute;
+  width: 50%;
+  padding: 0;
+  margin: 0;
+  top: 50px;
+  left: 50%;
+}
+
+article.aboutme .aboutme_content .aboutme_right form {
+  /*
+    Configuro o form e a font-size para
+    os elementos de texto dentro deste
+    container.
+  */
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+form legend {
+  /*
+    Configuro a legenda do findset.
+  */
+  font-weight: lighter;
+  font-size: 20px;
+}
+
+form fieldset {
+  /*
+    Configuro o fildset e aplico um 
+    box-shadow para um efeito visual e 
+    tambem o seu o posicionamento em 
+    absoluto relativamente ao seu pai.
+  */
+  position: absolute;
+  top: 0;
+  left: 7%;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 1);
+  min-width: 80%;
+  width: 80%;
+}
+
+form .aboutme_input {
+  /*
+    Configuro os inputs do form.
+  */
+  color: black;
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 5px;
+  background-color: transparent;
+  margin-bottom: 15px;
+  border: 1px solid #CC4949;
+  width: 100%;
+  outline: 0;
+}
+
+form .aboutme_input:focus {
+  /*
+    Configuro os inputs do form
+    para aumentarem a border no focus.
+  */
+  border: 2px solid #CC4949;
+}
+
+form textarea {
+  /*
+    Configuro o text area do form.
+  */
+  height: 80px;
+  resize: none;
+  color: black;
+  width: 100%;
+  border: 1px solid #CC4949;
+}
+
+form textarea:focus {
+  /*
+    Configuro o text area do form
+    para aumentar a border no focus.
+  */
+  border: 2px solid #CC4949;
+  outline: 0;
+}
+
+form input[type="submit"] {
+  /*
+    Configuro o butão de submit do form.
+  */
+  width: 100%;
+  background: rgba(233, 54, 54, 0.904);
+  border: 0;
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding: 10px 0;
+  transition: all 0.3s;
+  margin-top: 10px;
+  font-weight: 700;
+}
+
+[type="submit"]:hover {
+  /*
+    Configuro o butão de submit do form
+    quando estiver hovered.
+  */
+  background-color: #CC4949;
+}
+
+/* ▲ Form about me ▲ */
+
+/* ################################################# */
+
+/* ▼ Definição das Animações ▼ */
+
+@keyframes oscurecer_imagem {
+  0% {
+    filter: grayscale(0%);
+  }
+  100% {
+    filter: grayscale(70%);
+  }
+}
+
+@keyframes fade_in_opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes push_margin_social {
+  0% {
+    margin-left: -40px;
+  }
+  100% {
+    margin-left: 0px;
+  }
+}
+
+@keyframes fade_in_background_color {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #005f5f;
+  }
+}
+
+/* ▲ Definição das Animações  ▲ */
